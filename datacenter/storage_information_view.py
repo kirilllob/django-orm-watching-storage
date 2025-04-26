@@ -39,5 +39,3 @@ def storage_information_view(request):
         'non_closed_visits': non_closed_visits,
     }
     return render(request, 'storage_information.html', context)
-if __name__ == '__main__':
-    main()
