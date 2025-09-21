@@ -2,12 +2,11 @@ import os
 from dotenv import load_dotenv
 from environs import env
 
-
 load_dotenv()
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'checkpoint.devman.org',
+        'ENGINE': env.str("DB_ENGINE"),
+        'HOST': env.str("DB_HOST"),
         'PORT': env.str("DB_PORT"),
         'NAME':  env.str("DB_NAME"),
         'USER':  env.str("DB_USER"),
