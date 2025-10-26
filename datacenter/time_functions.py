@@ -2,10 +2,12 @@ from django.utils import timezone
 from django.utils.timezone import localtime
 
 def format_duration(duration):
+    seconds_in_minute = 60
+    seconds_in_hour = 3600
     total_seconds = duration.total_seconds()
-    hours = int(total_seconds//3600)
-    minets = int((total_seconds % 3600)//60)
-    seconds = int(total_seconds % 60)
+    hours = int(total_seconds//seconds_in_hour)
+    minets = int((total_seconds % seconds_in_hour)//seconds_in_minute)
+    seconds = int(total_seconds % seconds_in_minute)
     return f"{hours}:{minets}:{seconds}"
 
 def get_duration(visit):
